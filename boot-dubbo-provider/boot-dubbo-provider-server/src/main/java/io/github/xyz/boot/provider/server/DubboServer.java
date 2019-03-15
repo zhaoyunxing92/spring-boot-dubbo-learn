@@ -3,6 +3,7 @@
  */
 package io.github.xyz.boot.provider.server;
 
+import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -12,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @des:
  */
 @SpringBootApplication
+@EnableDubbo
 public class DubboServer {
     public static void main(String[] args) {
         SpringApplication.run(DubboServer.class, args);

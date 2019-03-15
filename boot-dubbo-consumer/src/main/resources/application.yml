@@ -3,3 +3,18 @@ spring:
     name: boot-dubbo-consumer
   profiles:
     active: local
+server:
+  port: 7080
+dubbo:
+  application:
+    name: boot-dubbo-provider-server
+  registry:
+    address: zookeeper://127.0.0.1:2181
+    register: false # 只订阅
+  protocol:
+    name: dubbo
+    port: 20880
+  scan:
+    base-packages: io.github.xyz.boot.provider.server.service
+  consumer:
+    check: false

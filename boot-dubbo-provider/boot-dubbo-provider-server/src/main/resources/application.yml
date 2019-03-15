@@ -3,3 +3,13 @@ spring:
     name: boot-dubbo-provider-server
   profiles:
     active: local
+dubbo:
+  application:
+    name: boot-dubbo-provider-server
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  protocol:
+    name: dubbo
+    port: 20881
+  scan:
+    base-packages: io.github.xyz.boot.provider.server.service
