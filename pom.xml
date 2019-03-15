@@ -16,6 +16,7 @@
         <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
 
         <boot.dubbo.provider.api.version>1.0-SNAPSHOT</boot.dubbo.provider.api.version>
+        <dubbo.spring.boot.starter.version>0.2.0</dubbo.spring.boot.starter.version>
     </properties>
 
     <groupId>io.github.xyz.boot</groupId>
@@ -34,6 +35,11 @@
                 <groupId>io.github.xyz.boot</groupId>
                 <artifactId>boot-dubbo-provider-api</artifactId>
                 <version>${boot.dubbo.provider.api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.boot</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${dubbo.spring.boot.starter.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

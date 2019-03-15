@@ -1,1 +1,5 @@
-
+spring:
+  application:
+    name: boot-dubbo-provider-server
+  profiles:
+    active: local

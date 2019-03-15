@@ -1,1 +1,5 @@
-
+spring:
+  application:
+    name: boot-dubbo-consumer
+  profiles:
+    active: local
