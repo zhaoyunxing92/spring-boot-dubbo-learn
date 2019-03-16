@@ -10,6 +10,6 @@ dubbo:
     address: zookeeper://127.0.0.1:2181
   protocol:
     name: dubbo
-    port: 20881
+    port: 20880
   scan:
     base-packages: io.github.xyz.boot.provider.server.service

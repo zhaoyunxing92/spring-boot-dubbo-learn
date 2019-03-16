@@ -13,8 +13,9 @@ dubbo:
     register: false # 只订阅
   protocol:
     name: dubbo
-    port: 20880
+    port: -1
   scan:
     base-packages: io.github.xyz.boot.provider.server.service
   consumer:
     check: false
+    cache: false
