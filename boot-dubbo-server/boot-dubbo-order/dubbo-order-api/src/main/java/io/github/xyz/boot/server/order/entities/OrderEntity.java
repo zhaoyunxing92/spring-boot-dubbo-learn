@@ -10,15 +10,6 @@ import lombok.EqualsAndHashCode;
 public class OrderEntity extends BaseModel<Long> {
 
     private static final long serialVersionUID = 1L;
-    /**
-     * 订单名称
-     */
-    private String name;
-
-    /**
-     * 订单描述
-     */
-    private String desc;
 
     /**
      * 商品code

@@ -30,8 +30,11 @@ public class StorageServiceImpl implements StorageService {
      */
     @Override
     public Response<String> deduct(String commodityId, Integer count) {
-        int i = storageEntityMapper.deductStorageById(commodityId, count);
-        return null;
+
+        if (storageEntityMapper.deductStorageById(commodityId, count) <= 0) {
+            throw new AppServiceException("库减失败");
+        }
+        return new Response<>(0, "库减成功", null);
     }
 
     /**
