@@ -10,37 +10,82 @@
         <relativePath/>
     </parent>
 
-    <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
-
-        <boot.dubbo.provider.api.version>1.0-SNAPSHOT</boot.dubbo.provider.api.version>
-        <dubbo.spring.boot.starter.version>0.2.0</dubbo.spring.boot.starter.version>
-    </properties>
-
     <groupId>io.github.xyz.boot</groupId>
     <artifactId>spring-boot-dubbo-learn</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+
+        <global.boot.dubbo.version>1.0-SNAPSHOT</global.boot.dubbo.version>
+        <dubbo.spring.boot.starter.version>0.2.0</dubbo.spring.boot.starter.version>
+    </properties>
+
+
     <modules>
-        <module>boot-dubbo-provider</module>
-        <module>boot-dubbo-consumer</module>
+        <module>boot-dubbo-server</module>
+        <module>boot-dubbo-web</module>
+        <module>boot-dubbo-core-config</module>
     </modules>
 
     <dependencyManagement>
         <dependencies>
+
+            <!--dubbo 基础依赖-->
             <dependency>
                 <groupId>io.github.xyz.boot</groupId>
-                <artifactId>boot-dubbo-provider-api</artifactId>
-                <version>${boot.dubbo.provider.api.version}</version>
+                <artifactId>dubbo-core-dependencies</artifactId>
+                <version>${global.boot.dubbo.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>io.github.xyz.boot</groupId>
+                        <artifactId>dubbo-common</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
+
+            <!--web 配置-->
+            <dependency>
+                <groupId>io.github.xyz.boot</groupId>
+                <artifactId>dubbo-core-web-config</artifactId>
+                <version>${global.boot.dubbo.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>io.github.xyz.boot</groupId>
+                        <artifactId>dubbo-common</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!--公共部分-->
+            <dependency>
+                <groupId>io.github.xyz.boot</groupId>
+                <artifactId>dubbo-common</artifactId>
+                <version>${global.boot.dubbo.version}</version>
+            </dependency>
+
+            <!--mysql　配置-->
+            <dependency>
+                <groupId>io.github.xyz.boot</groupId>
+                <artifactId>dubbo-core-mysql-config</artifactId>
+                <version>${global.boot.dubbo.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>io.github.xyz.boot</groupId>
+                        <artifactId>dubbo-common</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
             <dependency>
                 <groupId>com.alibaba.boot</groupId>
                 <artifactId>dubbo-spring-boot-starter</artifactId>
                 <version>${dubbo.spring.boot.starter.version}</version>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 
