@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: dubbo-storage-service
+  profiles:
+    active: local
+
+dubbo:
+  application:
+    name: boot-storage-service
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  protocol:
+    name: dubbo
+    port: -1
+  scan:
+    base-packages: io.github.xyz.boot.server.order.service

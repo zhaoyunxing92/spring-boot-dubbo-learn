@@ -10,7 +10,7 @@ import io.github.xyz.boot.common.result.Response;
  * @date: 2019-03-17 16:20
  * @des:　账户
  */
-public interface UserService {
+public interface AccountService {
     /**
      * debit balance of user's account
      *

@@ -1,6 +1,6 @@
 spring:
   application:
-    name: boot-dubbo-api
+    name: dubbo-web-api
   profiles:
     active: local
 server:
