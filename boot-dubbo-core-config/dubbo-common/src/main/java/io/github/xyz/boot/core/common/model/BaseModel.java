@@ -21,14 +21,14 @@ public class BaseModel<ID extends Serializable> implements Serializable {
     /**
      * 版本
      */
-    private Integer version;
+    private Integer version = 1;
     /**
      * 创建时间
      */
-    private Date createTime;
+    private Date createTime = new Date();
     /**
      * 修改时间
      */
-    private Date updateTime;
+    private Date updateTime = new Date();
 
 }

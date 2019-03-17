@@ -23,5 +23,5 @@ public interface StorageEntityMapper extends BaseMapper<StorageEntity, Long> {
      * @param count       商品个数
      * @return　影响的行数
      */
-    int deductStorageById(String commodityId, Integer count);
+    int deductStorageById(@Param("commodityId") String commodityId, @Param("count") Integer count);
 }

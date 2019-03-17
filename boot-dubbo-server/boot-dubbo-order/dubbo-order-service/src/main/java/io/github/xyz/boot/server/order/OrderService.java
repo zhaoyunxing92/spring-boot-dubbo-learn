@@ -4,7 +4,7 @@
 package io.github.xyz.boot.server.order;
 
 import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
-import io.github.xyz.boot.core.mysql.config.AppMyBatisConfig;
+import io.github.xyz.boot.core.mysql.config.AppDubboCoreConfig;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Import;
  * @des: 订单服务
  */
 @SpringBootApplication
-@Import(AppMyBatisConfig.class)
+@Import(AppDubboCoreConfig.class)
 @MapperScan(basePackages = "io.github.xyz.boot.server.order.mappers")
 @EnableDubbo
 public class OrderService {

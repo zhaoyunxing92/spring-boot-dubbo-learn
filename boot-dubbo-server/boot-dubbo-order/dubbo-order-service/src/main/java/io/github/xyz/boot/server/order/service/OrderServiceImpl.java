@@ -62,7 +62,7 @@ public class OrderServiceImpl implements OrderService {
     private void checkAccountBalances(String userId, Long sumMoney) {
         Response<AccountEntity> accountres = accountService.getAccountById(userId);
         AccountEntity account = accountres.getData();
-        
+
         if (account.getBalance() < sumMoney) {
             throw new AppServiceException("用户金额不足");
         }

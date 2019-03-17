@@ -16,7 +16,7 @@
 
     <sql id="Base_Column_List">
         <!-- Don't change -->
-        id, commodity_id, name, desc, money, residue, version, create_time, update_time
+        `id`, `commodity_id`, `name`, `desc`, `money`, `residue`, `version`, `create_time`, `update_time`
     </sql>
 
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
@@ -129,22 +129,16 @@
 
     <select id="selectStorageByCode" resultMap="BaseResultMap" parameterType="java.lang.String">
         select
-        <include refid="Base_Column_List"/>
+          <include refid="Base_Column_List"/>
         from storage
         where commodity_id = #{code,jdbcType=VARCHAR}
     </select>
 
     <update id="deductStorageById">
-
         update storage
-        <set>
-            <if test="residue != null">
-                residue -= #{residue,jdbcType=INTEGER},
-            </if>
-            <if test="version != null">
-                version += version,
-            </if>
-        </set>
-        where commodity_id = #{code,jdbcType=VARCHAR}
+           set residue=residue-#{count,jdbcType=INTEGER},
+            version = version+1
+        where commodity_id = #{commodityId,jdbcType=VARCHAR}
+        and residue&gt;=0
     </update>
 </mapper>
