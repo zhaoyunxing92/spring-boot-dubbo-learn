@@ -3,7 +3,23 @@ spring:
     name: dubbo-storage-service
   profiles:
     active: local
-
+  datasource:
+    name: dubbo-storage-service
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/t_order?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2b8
+    username: root
+    password: 123456
+    #配置初始化大小、最小、最大
+    maxActive: 20
+    initialSize: 1
+    minIdle: 3
+    maxWait: 60000
+    time-between-eviction-runs-millis: 60000
+    minEvictableIdleTimeMillis: 300000
+    test-while-idle: true
+    test-on-borrow: false
+    test-on-return: false
 dubbo:
   application:
     name: boot-storage-service
