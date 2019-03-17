@@ -22,6 +22,15 @@
             <groupId>io.github.xyz.boot</groupId>
             <artifactId>dubbo-order-api</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>io.github.xyz.boot</groupId>
+            <artifactId>dubbo-storage-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.xyz.boot</groupId>
+            <artifactId>dubbo-user-api</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

@@ -3,12 +3,16 @@
  */
 package io.github.xyz.boot.web.order.controller;
 
-import io.github.xyz.boot.common.result.Response;
-import io.github.xyz.boot.web.order.service.BusinessService;
+import com.alibaba.dubbo.config.annotation.Reference;
+import io.github.xyz.boot.core.common.result.Response;
+import io.github.xyz.boot.server.order.api.OrderService;
+import io.github.xyz.boot.server.order.entities.OrderEntity;
 import io.github.xyz.boot.web.order.vo.OrderVo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author zhaoyunxing
@@ -19,13 +23,16 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/order")
 public class OrderController {
 
-    private final BusinessService businessService;
-
-    @Autowired
-    public OrderController(BusinessService businessService) {this.businessService = businessService;}
-
+    @Reference
+    private OrderService orderService;
+    /**
+     * 创建订单
+     *
+     * @param order 　订单
+     * @return　OrderEntity
+     */
     @PostMapping
-    public Response<String> creatOder(@RequestBody @Validated OrderVo order) {
-        return businessService.purchase(order);
+    public Response<OrderEntity> creatOder(@RequestBody @Validated OrderVo order) {
+        return orderService.creatOrder(order.getUserId(), order.getCommodityId(), order.getCount());
     }
 }

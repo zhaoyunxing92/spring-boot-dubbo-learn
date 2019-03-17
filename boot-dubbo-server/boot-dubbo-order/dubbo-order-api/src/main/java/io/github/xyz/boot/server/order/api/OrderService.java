@@ -4,6 +4,7 @@
 package io.github.xyz.boot.server.order.api;
 
 import io.github.xyz.boot.core.common.result.Response;
+import io.github.xyz.boot.server.order.entities.OrderEntity;
 
 /**
  * @author zhaoyunxing
@@ -19,5 +20,5 @@ public interface OrderService {
      * @param count       购买数量
      * @return Response
      */
-    Response<String> creat(String userId, String commodityId, Integer count);
+    Response<OrderEntity> creatOrder(String userId, String commodityId, Integer count);
 }

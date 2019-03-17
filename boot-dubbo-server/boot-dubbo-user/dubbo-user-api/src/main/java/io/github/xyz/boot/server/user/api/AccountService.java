@@ -4,6 +4,7 @@
 package io.github.xyz.boot.server.user.api;
 
 import io.github.xyz.boot.core.common.result.Response;
+import io.github.xyz.boot.server.user.entities.AccountEntity;
 
 /**
  * @author zhaoyunxing
@@ -18,4 +19,12 @@ public interface AccountService {
      * @param money  金额
      */
     Response<String> debit(String userId, Long money);
+
+    /**
+     * 获取账户
+     *
+     * @param userId 　用户id
+     * @return 账户
+     */
+    Response<AccountEntity> getAccountById(String userId);
 }

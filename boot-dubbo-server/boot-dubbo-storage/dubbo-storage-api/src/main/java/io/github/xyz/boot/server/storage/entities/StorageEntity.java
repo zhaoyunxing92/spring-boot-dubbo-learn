@@ -28,6 +28,11 @@ public class StorageEntity extends BaseModel<Long> {
     private String desc;
 
     /**
+     * 商品单价（单位：分）
+     */
+    private Long money;
+
+    /**
      * 剩余库存
      */
     private Integer residue;

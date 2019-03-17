@@ -95,4 +95,26 @@
         where id = #{id,jdbcType=BIGINT}
     </update>
 
+
+    <select id="selectByAccountById" resultMap="BaseResultMap" parameterType="java.lang.String">
+        <!-- Don't change -->
+        select
+        <include refid="Base_Column_List"/>
+        from account
+        where user_id = #{userId,jdbcType=VARCHAR}
+    </select>
+
+    <update id="debitAccountById">
+        update account
+        <set>
+            <if test="balance != null">
+                balance -= #{balance,jdbcType=BIGINT},
+            </if>
+            <if test="version != null">
+                version +=version ,
+            </if>
+        </set>
+        where user_id = #{userId,jdbcType=VARCHAR}
+        and balance&gt;=0
+    </update>
 </mapper>

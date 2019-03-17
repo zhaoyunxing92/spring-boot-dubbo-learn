@@ -18,7 +18,7 @@ public class AccountEntity extends BaseModel<Long> {
     private String userId;
 
     /**
-     * 账户余额
+     * 账户余额（单位：分）
      */
     private Long balance;
 

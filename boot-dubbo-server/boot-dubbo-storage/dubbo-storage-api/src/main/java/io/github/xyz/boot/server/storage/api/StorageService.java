@@ -4,6 +4,7 @@
 package io.github.xyz.boot.server.storage.api;
 
 import io.github.xyz.boot.core.common.result.Response;
+import io.github.xyz.boot.server.storage.entities.StorageEntity;
 
 /**
  * @author zhaoyunxing
@@ -19,4 +20,12 @@ public interface StorageService {
      * @return　Response
      */
     Response<String> deduct(String commodityId, Integer count);
+
+    /**
+     * 根据商品id获取商品
+     *
+     * @param commodityId 商品id
+     * @return
+     */
+    Response<StorageEntity> getStorageById(String commodityId);
 }

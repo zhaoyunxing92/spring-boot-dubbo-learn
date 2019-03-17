@@ -18,6 +18,14 @@
             <groupId>io.github.xyz.boot</groupId>
             <artifactId>dubbo-core-web-config</artifactId>
         </dependency>
+        <dependency>
+            <groupId>io.github.xyz.boot</groupId>
+            <artifactId>dubbo-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.xyz.boot</groupId>
+            <artifactId>dubbo-order-api</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
