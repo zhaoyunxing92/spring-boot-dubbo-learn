@@ -15,7 +15,7 @@ dubbo:
     name: dubbo
     port: -1
   scan:
-    base-packages: io.github.xyz.boot.provider.server.service
+    base-packages: io.github.xyz.boot.web
   consumer:
     check: false
     cache: false

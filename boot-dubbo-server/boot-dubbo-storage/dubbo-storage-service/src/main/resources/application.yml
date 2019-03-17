@@ -25,8 +25,14 @@ dubbo:
     name: boot-storage-service
   registry:
     address: zookeeper://127.0.0.1:2181
+  consumer:
+    cache: false
+    check: false
   protocol:
-    name: dubbo
     port: -1
+    name: dubbo
+  provider:
+    timeout: 60000
+    retries: 0
   scan:
     base-packages: io.github.xyz.boot.server.order.service

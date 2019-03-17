@@ -15,20 +15,20 @@
 
     <sql id="Base_Column_List">
         <!-- Don't change -->
-        id, commodity_id, user_id, money, count, version, create_time, update_time
+        id, commodity_id, user_id, `money`, count, `version`, create_time, update_time
     </sql>
 
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
         <!-- Don't change -->
         select
         <include refid="Base_Column_List"/>
-        from order
+        from `order`
         where id = #{id,jdbcType=BIGINT}
     </select>
 
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
         <!-- Don't change -->
-        delete from order
+        delete from `order`
         where id = #{id,jdbcType=BIGINT}
     </delete>
 
@@ -38,7 +38,7 @@
             SELECT LAST_INSERT_ID()
         </selectKey>
 
-        insert into order
+        insert into `order`
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="commodityId != null">
                 commodity_id,
@@ -89,7 +89,7 @@
 
     <update id="updateByPrimaryKeySelective" parameterType="io.github.xyz.boot.server.order.entities.OrderEntity">
         <!-- Don't change -->
-        update order
+        update `order`
         <set>
             <if test="commodityId != null">
                 commodity_id = #{commodityId,jdbcType=VARCHAR},

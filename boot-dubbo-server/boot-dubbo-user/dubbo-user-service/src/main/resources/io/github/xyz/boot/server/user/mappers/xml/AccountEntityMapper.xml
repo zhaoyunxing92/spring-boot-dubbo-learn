@@ -106,14 +106,8 @@
 
     <update id="debitAccountById">
         update account
-        <set>
-            <if test="balance != null">
-                balance -= #{balance,jdbcType=BIGINT},
-            </if>
-            <if test="version != null">
-                version +=version ,
-            </if>
-        </set>
+          set balance=balance-#{money,jdbcType=BIGINT},
+            version=version+1
         where user_id = #{userId,jdbcType=VARCHAR}
         and balance&gt;=0
     </update>
