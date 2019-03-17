@@ -11,9 +11,21 @@
         <relativePath>../../../</relativePath>
     </parent>
 
-
-
     <artifactId>dubbo-order-service</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>io.github.xyz.boot</groupId>
+            <artifactId>dubbo-core-mysql-config</artifactId>
+        </dependency>
+    </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

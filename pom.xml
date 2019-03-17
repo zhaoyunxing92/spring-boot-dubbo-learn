@@ -39,12 +39,6 @@
                 <groupId>io.github.xyz.boot</groupId>
                 <artifactId>dubbo-core-dependencies</artifactId>
                 <version>${global.boot.dubbo.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>io.github.xyz.boot</groupId>
-                        <artifactId>dubbo-common</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
 
             <!--web 配置-->
@@ -52,12 +46,6 @@
                 <groupId>io.github.xyz.boot</groupId>
                 <artifactId>dubbo-core-web-config</artifactId>
                 <version>${global.boot.dubbo.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>io.github.xyz.boot</groupId>
-                        <artifactId>dubbo-common</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
 
             <!--公共部分-->
@@ -72,12 +60,27 @@
                 <groupId>io.github.xyz.boot</groupId>
                 <artifactId>dubbo-core-mysql-config</artifactId>
                 <version>${global.boot.dubbo.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>io.github.xyz.boot</groupId>
-                        <artifactId>dubbo-common</artifactId>
-                    </exclusion>
-                </exclusions>
+            </dependency>
+
+            <!--用户api-->
+            <dependency>
+                <groupId>io.github.xyz.boot</groupId>
+                <artifactId>dubbo-user-api</artifactId>
+                <version>${global.boot.dubbo.version}</version>
+            </dependency>
+
+            <!--库存api-->
+            <dependency>
+                <groupId>io.github.xyz.boot</groupId>
+                <artifactId>dubbo-storage-api</artifactId>
+                <version>${global.boot.dubbo.version}</version>
+            </dependency>
+
+            <!--订单api-->
+            <dependency>
+                <groupId>io.github.xyz.boot</groupId>
+                <artifactId>dubbo-order-api</artifactId>
+                <version>${global.boot.dubbo.version}</version>
             </dependency>
 
             <dependency>
