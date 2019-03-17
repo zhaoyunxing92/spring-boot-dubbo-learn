@@ -19,6 +19,17 @@
             <groupId>io.github.xyz.boot</groupId>
             <artifactId>dubbo-core-dependencies</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>io.github.xyz.boot</groupId>
+            <artifactId>dubbo-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>

@@ -1,7 +1,7 @@
 /**
  * Copyright(C) 2019 Hangzhou zhaoyunxing Technology Co., Ltd. All rights reserved.
  */
-package io.github.xyz.boot.common.result;
+package io.github.xyz.boot.core.common.result;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

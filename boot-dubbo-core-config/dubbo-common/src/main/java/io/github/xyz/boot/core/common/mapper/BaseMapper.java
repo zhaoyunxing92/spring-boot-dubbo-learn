@@ -1,9 +1,9 @@
 /**
  * Copyright(C) 2019 Hangzhou zhaoyunxing Technology Co., Ltd. All rights reserved.
  */
-package io.github.xyz.boot.common.mapper;
+package io.github.xyz.boot.core.common.mapper;
 
-import io.github.xyz.boot.common.model.BaseModel;
+import io.github.xyz.boot.core.common.model.BaseModel;
 
 import java.io.Serializable;
 

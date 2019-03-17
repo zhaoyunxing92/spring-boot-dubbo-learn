@@ -3,6 +3,8 @@ spring:
     name: dubbo-order-service
   profiles:
     active: local
+  datasource:
+    url:
 
 dubbo:
   application:

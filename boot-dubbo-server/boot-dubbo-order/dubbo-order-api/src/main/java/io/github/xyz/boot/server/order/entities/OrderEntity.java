@@ -1,7 +1,7 @@
 package io.github.xyz.boot.server.order.entities;
 
 
-import io.github.xyz.boot.common.model.BaseModel;
+import io.github.xyz.boot.core.common.model.BaseModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

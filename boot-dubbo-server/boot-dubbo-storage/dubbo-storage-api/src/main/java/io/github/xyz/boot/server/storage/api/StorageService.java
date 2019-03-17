@@ -3,7 +3,7 @@
  */
 package io.github.xyz.boot.server.storage.api;
 
-import io.github.xyz.boot.common.result.Response;
+import io.github.xyz.boot.core.common.result.Response;
 
 /**
  * @author zhaoyunxing

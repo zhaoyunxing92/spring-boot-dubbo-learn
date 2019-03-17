@@ -4,7 +4,7 @@
 package io.github.xyz.boot.server.storage.service;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import io.github.xyz.boot.common.result.Response;
+import io.github.xyz.boot.core.common.result.Response;
 import io.github.xyz.boot.server.storage.api.StorageService;
 
 /**
