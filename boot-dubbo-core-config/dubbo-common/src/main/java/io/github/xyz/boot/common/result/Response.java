@@ -1,5 +1,5 @@
 /**
- * Copyright(C) 2019 Hangzhou sunny Technology Co., Ltd. All rights reserved.
+ * Copyright(C) 2019 Hangzhou zhaoyunxing Technology Co., Ltd. All rights reserved.
  */
 package io.github.xyz.boot.common.result;
 

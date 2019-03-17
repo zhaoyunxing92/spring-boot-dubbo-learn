@@ -18,6 +18,10 @@
             <groupId>io.github.xyz.boot</groupId>
             <artifactId>dubbo-core-mysql-config</artifactId>
         </dependency>
+        <dependency>
+            <groupId>io.github.xyz.boot</groupId>
+            <artifactId>dubbo-user-api</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
