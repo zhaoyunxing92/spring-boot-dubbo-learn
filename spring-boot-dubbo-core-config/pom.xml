@@ -15,19 +15,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <modules>
-        <module>dubbo-core-dependencies</module>
-        <module>spring-boot-dubbo-mysql-config</module>
-        <module>spring-boot-dubbo-web-config</module>
-        <module>spring-boot-dubbo-common</module>
-    </modules>
-
-    　　　
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
-        
         <fastjson.version>1.2.37</fastjson.version>
     </properties>
 
@@ -38,7 +26,13 @@
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
             </dependency>
-
         </dependencies>
     </dependencyManagement>
+
+    <modules>
+        <module>dubbo-core-dependencies</module>
+        <module>spring-boot-dubbo-mysql-config</module>
+        <module>spring-boot-dubbo-web-config</module>
+        <module>spring-boot-dubbo-common</module>
+    </modules>
 </project>
