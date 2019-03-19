@@ -29,7 +29,7 @@ dubbo:
     cache: false
     check: false
   protocol:
-    port: -1
+    port: 8775
     name: dubbo
   provider:
     timeout: 60000
