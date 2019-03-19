@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="io.github.xyz.boot.server.order.mappers.OrderEntityMapper">
-    <resultMap id="BaseResultMap" type="io.github.xyz.boot.server.order.entities.OrderEntity">
+<mapper namespace="io.github.xyz.boot.fescar.order.mappers.OrderEntityMapper">
+    <resultMap id="BaseResultMap" type="io.github.xyz.boot.fescar.order.entities.OrderEntity">
         <!-- Don't change -->
         <id column="id" property="id" jdbcType="BIGINT"/>
         <result column="commodity_id" property="commodityId" jdbcType="VARCHAR"/>
@@ -15,7 +15,7 @@
 
     <sql id="Base_Column_List">
         <!-- Don't change -->
-        id, commodity_id, user_id, `money`, count, `version`, create_time, update_time
+        id, commodity_id, user_id, `money`, `count`, `version`, create_time, update_time
     </sql>
 
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
@@ -32,11 +32,7 @@
         where id = #{id,jdbcType=BIGINT}
     </delete>
 
-    <insert id="insertSelective" parameterType="io.github.xyz.boot.server.order.entities.OrderEntity">
-        <!-- Don't change -->
-        <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER">
-            SELECT LAST_INSERT_ID()
-        </selectKey>
+    <insert id="insertSelective" parameterType="io.github.xyz.boot.fescar.order.entities.OrderEntity" useGeneratedKeys="true" keyProperty="id">
 
         insert into `order`
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -87,7 +83,7 @@
         </trim>
     </insert>
 
-    <update id="updateByPrimaryKeySelective" parameterType="io.github.xyz.boot.server.order.entities.OrderEntity">
+    <update id="updateByPrimaryKeySelective" parameterType="io.github.xyz.boot.fescar.order.entities.OrderEntity">
         <!-- Don't change -->
         update `order`
         <set>
