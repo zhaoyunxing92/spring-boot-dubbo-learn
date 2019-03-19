@@ -3,9 +3,10 @@
  */
 package io.github.xyz.boot.fescar.storage.api;
 
+import io.github.xyz.boot.core.common.result.Response;
 import io.github.xyz.boot.fescar.storage.entities.StorageEntity;
 
-import javax.xml.ws.Response;
+
 
 
 /**
@@ -27,7 +28,7 @@ public interface StorageService {
      * 根据商品id获取商品
      *
      * @param commodityId 商品id
-     * @return
+     * @return　Response
      */
     Response<StorageEntity> getStorageById(String commodityId);
 }

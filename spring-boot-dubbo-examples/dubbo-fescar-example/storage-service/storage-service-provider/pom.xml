@@ -7,7 +7,7 @@
         <artifactId>dubbo-fescar-example</artifactId>
         <groupId>io.github.xyz.boot</groupId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../../../</relativePath>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
     <artifactId>storage-service-provider</artifactId>
@@ -16,6 +16,10 @@
         <dependency>
             <groupId>io.github.xyz.boot</groupId>
             <artifactId>dubbo-core-mysql-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.xyz.boot</groupId>
+            <artifactId>storage-service-api</artifactId>
         </dependency>
     </dependencies>
 </project>
