@@ -6,12 +6,12 @@
 
     <parent>
         <groupId>io.github.xyz.boot</groupId>
-        <artifactId>spring-boot-dubbo-learn</artifactId>
+        <artifactId>boot-dubbo-core-config</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../../</relativePath>
     </parent>
 
     <artifactId>dubbo-core-mysql-config</artifactId>
+    <version>1.0-SNAPSHOT</version>
     <description>主要是对mysql和mybatis一个包装</description>
 
     <dependencies>

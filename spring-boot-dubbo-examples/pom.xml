@@ -5,20 +5,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
+        <artifactId>spring-boot-dubbo-learn</artifactId>
         <groupId>io.github.xyz.boot</groupId>
-        <artifactId>spring-boot-dubbo-dependencies</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>boot-dubbo-core-config</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>spring-boot-dubbo-examples</artifactId>
     <packaging>pom</packaging>
 
     <modules>
-        <module>dubbo-core-dependencies</module>
-        <module>dubbo-core-mysql-config</module>
-        <module>dubbo-core-web-config</module>
-        <module>dubbo-common</module>
+        <module>dubbo-fescar-example</module>
     </modules>
-
 </project>

@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: fescar-business-service
+  profiles:
+    active: local
+server:
+  port: 7080
+dubbo:
+  application:
+    name: fescar-business-service
+  registry:
+    address: zookeeper://127.0.0.1:2181
+    register: false # 只订阅
+  protocol:
+    name: dubbo
+    port: -1
+  scan:
+    base-packages: io.github.xyz.boot.web
+  consumer:
+    check: false
+    cache: false

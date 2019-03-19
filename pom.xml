@@ -4,120 +4,41 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.0.RELEASE</version>
+        <groupId>io.github.xyz.boot</groupId>
+        <artifactId>spring-boot-dubbo-dependencies</artifactId>
+        <version>1.0-SNAPSHOT</version>
         <relativePath/>
     </parent>
 
-    <groupId>io.github.xyz.boot</groupId>
     <artifactId>spring-boot-dubbo-learn</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+    <!--<properties>-->
+        <!--<maven.compiler.source>1.8</maven.compiler.source>-->
+        <!--<maven.compiler.target>1.8</maven.compiler.target>-->
+        <!--<maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>-->
 
-        <global.boot.dubbo.version>1.0-SNAPSHOT</global.boot.dubbo.version>
-        <dubbo.spring.boot.starter.version>0.2.0</dubbo.spring.boot.starter.version>
-        <mybatis.spring.boot.starter.version>1.1.1</mybatis.spring.boot.starter.version>
-        <mysql.connector.java.version>6.0.6</mysql.connector.java.version>
-        <druid.version>1.0.26</druid.version>
-    </properties>
+        <!--<global.boot.dubbo.version>1.0-SNAPSHOT</global.boot.dubbo.version>-->
+        <!--<dubbo.spring.boot.starter.version>0.2.0</dubbo.spring.boot.starter.version>-->
+        <!--<mybatis.spring.boot.starter.version>1.1.1</mybatis.spring.boot.starter.version>-->
+        <!--<mysql.connector.java.version>6.0.6</mysql.connector.java.version>-->
+        <!--<druid.version>1.0.26</druid.version>-->
+    <!--</properties>-->
 
 
     <modules>
-        <module>boot-dubbo-server</module>
-        <module>boot-dubbo-web</module>
+        <!--<module>boot-dubbo-server</module>-->
         <module>boot-dubbo-core-config</module>
+        <module>spring-boot-dubbo-examples</module>
+        <module>spring-boot-dubbo-dependencies</module>
     </modules>
 
-    <dependencyManagement>
-        <dependencies>
-
-            <!--dubbo 基础依赖-->
-            <dependency>
-                <groupId>io.github.xyz.boot</groupId>
-                <artifactId>dubbo-core-dependencies</artifactId>
-                <version>${global.boot.dubbo.version}</version>
-            </dependency>
-
-            <!--web 配置-->
-            <dependency>
-                <groupId>io.github.xyz.boot</groupId>
-                <artifactId>dubbo-core-web-config</artifactId>
-                <version>${global.boot.dubbo.version}</version>
-            </dependency>
-
-            <!--公共部分-->
-            <dependency>
-                <groupId>io.github.xyz.boot</groupId>
-                <artifactId>dubbo-common</artifactId>
-                <version>${global.boot.dubbo.version}</version>
-            </dependency>
-
-            <!--mysql　配置-->
-            <dependency>
-                <groupId>io.github.xyz.boot</groupId>
-                <artifactId>dubbo-core-mysql-config</artifactId>
-                <version>${global.boot.dubbo.version}</version>
-            </dependency>
-
-            <!--用户api-->
-            <dependency>
-                <groupId>io.github.xyz.boot</groupId>
-                <artifactId>dubbo-user-api</artifactId>
-                <version>${global.boot.dubbo.version}</version>
-            </dependency>
-
-            <!--库存api-->
-            <dependency>
-                <groupId>io.github.xyz.boot</groupId>
-                <artifactId>dubbo-storage-api</artifactId>
-                <version>${global.boot.dubbo.version}</version>
-            </dependency>
-
-            <!--订单api-->
-            <dependency>
-                <groupId>io.github.xyz.boot</groupId>
-                <artifactId>dubbo-order-api</artifactId>
-                <version>${global.boot.dubbo.version}</version>
-            </dependency>
-            <!--dubbo-->
-            <dependency>
-                <groupId>com.alibaba.boot</groupId>
-                <artifactId>dubbo-spring-boot-starter</artifactId>
-                <version>${dubbo.spring.boot.starter.version}</version>
-            </dependency>
-
-            <!-- druid阿里巴巴数据库连接池 -->
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>druid</artifactId>
-                <version>${druid.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>${mysql.connector.java.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.mybatis.spring.boot</groupId>
-                <artifactId>mybatis-spring-boot-starter</artifactId>
-                <version>${mybatis.spring.boot.starter.version}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
+    
     <dependencies>
-        <!--lombok-->
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
+            <groupId>io.github.xyz.boot</groupId>
+            <artifactId>dubbo-common</artifactId>
         </dependency>
     </dependencies>
 </project>
