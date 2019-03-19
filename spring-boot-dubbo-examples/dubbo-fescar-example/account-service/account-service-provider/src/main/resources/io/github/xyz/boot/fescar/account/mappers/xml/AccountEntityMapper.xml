@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="io.github.xyz.boot.fescar.order.mappers.OrderEntityMapper">
-    <resultMap id="BaseResultMap" type="io.github.xyz.boot.fescar.order.entities.OrderEntity">
+<mapper namespace="io.github.xyz.boot.fescar.account.mappers.AccountEntityMapper">
+    <resultMap id="BaseResultMap" type="io.github.xyz.boot.fescar.account.entities.AccountEntity">
         <!-- Don't change -->
         <id column="id" property="id" jdbcType="BIGINT"/>
-        <result column="commodity_id" property="commodityId" jdbcType="VARCHAR"/>
         <result column="user_id" property="userId" jdbcType="VARCHAR"/>
-        <result column="money" property="money" jdbcType="BIGINT"/>
-        <result column="count" property="count" jdbcType="INTEGER"/>
+        <result column="balance" property="balance" jdbcType="BIGINT"/>
         <result column="version" property="version" jdbcType="INTEGER"/>
         <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
         <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
@@ -15,38 +13,35 @@
 
     <sql id="Base_Column_List">
         <!-- Don't change -->
-        id, commodity_id, user_id, `money`, `count`, `version`, create_time, update_time
+        id, user_id, balance, version, create_time, update_time
     </sql>
 
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
         <!-- Don't change -->
         select
         <include refid="Base_Column_List"/>
-        from `order`
+        from account
         where id = #{id,jdbcType=BIGINT}
     </select>
 
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
         <!-- Don't change -->
-        delete from `order`
+        delete from account
         where id = #{id,jdbcType=BIGINT}
     </delete>
 
-    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="io.github.xyz.boot.fescar.order.entities.OrderEntity">
-
-        insert into `order`
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="io.github.xyz.boot.fescar.account.entities.AccountEntity">
+        <!--&lt;!&ndash; Don't change &ndash;&gt;-->
+        <!--<selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER">-->
+            <!--SELECT LAST_INSERT_ID()-->
+        <!--</selectKey>-->
+        insert into account
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="commodityId != null">
-                commodity_id,
-            </if>
             <if test="userId != null">
                 user_id,
             </if>
-            <if test="money != null">
-                money,
-            </if>
-            <if test="count != null">
-                count,
+            <if test="balance != null">
+                balance,
             </if>
             <if test="version != null">
                 version,
@@ -59,17 +54,11 @@
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="commodityId != null">
-                #{commodityId,jdbcType=VARCHAR},
-            </if>
             <if test="userId != null">
                 #{userId,jdbcType=VARCHAR},
             </if>
-            <if test="money != null">
-                #{money,jdbcType=BIGINT},
-            </if>
-            <if test="count != null">
-                #{count,jdbcType=INTEGER},
+            <if test="balance != null">
+                #{balance,jdbcType=BIGINT},
             </if>
             <if test="version != null">
                 #{version,jdbcType=INTEGER},
@@ -83,21 +72,15 @@
         </trim>
     </insert>
 
-    <update id="updateByPrimaryKeySelective" parameterType="io.github.xyz.boot.fescar.order.entities.OrderEntity">
+    <update id="updateByPrimaryKeySelective" parameterType="io.github.xyz.boot.fescar.account.entities.AccountEntity">
         <!-- Don't change -->
-        update `order`
+        update account
         <set>
-            <if test="commodityId != null">
-                commodity_id = #{commodityId,jdbcType=VARCHAR},
-            </if>
             <if test="userId != null">
                 user_id = #{userId,jdbcType=VARCHAR},
             </if>
-            <if test="money != null">
-                money = #{money,jdbcType=BIGINT},
-            </if>
-            <if test="count != null">
-                count = #{count,jdbcType=INTEGER},
+            <if test="balance != null">
+                balance = #{balance,jdbcType=BIGINT},
             </if>
             <if test="version != null">
                 version = #{version,jdbcType=INTEGER},
@@ -112,4 +95,20 @@
         where id = #{id,jdbcType=BIGINT}
     </update>
 
+
+    <select id="selectByAccountById" resultMap="BaseResultMap" parameterType="java.lang.String">
+        <!-- Don't change -->
+        select
+        <include refid="Base_Column_List"/>
+        from account
+        where user_id = #{userId,jdbcType=VARCHAR}
+    </select>
+
+    <update id="debitAccountById">
+        update account
+          set balance=balance-#{money,jdbcType=BIGINT},
+            version=version+1
+        where user_id = #{userId,jdbcType=VARCHAR}
+        and balance&gt;=0
+    </update>
 </mapper>

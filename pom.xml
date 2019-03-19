@@ -7,38 +7,23 @@
         <groupId>io.github.xyz.boot</groupId>
         <artifactId>spring-boot-dubbo-dependencies</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath/>
+        <relativePath>spring-boot-dubbo-dependencies/pom.xml</relativePath>
     </parent>
 
     <artifactId>spring-boot-dubbo-learn</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <!--<properties>-->
-        <!--<maven.compiler.source>1.8</maven.compiler.source>-->
-        <!--<maven.compiler.target>1.8</maven.compiler.target>-->
-        <!--<maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>-->
-
-        <!--<global.boot.dubbo.version>1.0-SNAPSHOT</global.boot.dubbo.version>-->
-        <!--<dubbo.spring.boot.starter.version>0.2.0</dubbo.spring.boot.starter.version>-->
-        <!--<mybatis.spring.boot.starter.version>1.1.1</mybatis.spring.boot.starter.version>-->
-        <!--<mysql.connector.java.version>6.0.6</mysql.connector.java.version>-->
-        <!--<druid.version>1.0.26</druid.version>-->
-    <!--</properties>-->
-
-
     <modules>
-        <!--<module>boot-dubbo-server</module>-->
-        <module>boot-dubbo-core-config</module>
+        <module>spring-boot-dubbo-core-config</module>
         <module>spring-boot-dubbo-examples</module>
         <module>spring-boot-dubbo-dependencies</module>
     </modules>
 
-    
     <dependencies>
         <dependency>
             <groupId>io.github.xyz.boot</groupId>
-            <artifactId>dubbo-common</artifactId>
+            <artifactId>spring-boot-dubbo-common</artifactId>
         </dependency>
     </dependencies>
 </project>

@@ -32,12 +32,6 @@
         <module>business-service</module>
     </modules>
 
-    <dependencies>
-        <dependency>
-            <groupId>io.github.xyz.boot</groupId>
-            <artifactId>dubbo-common</artifactId>
-        </dependency>
-    </dependencies>
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -50,52 +44,10 @@
                 <artifactId>storage-service-api</artifactId>
                 <version>${fescar.dubbo.api.version}</version>
             </dependency>
-
-            <!--dubbo 基础依赖-->
             <dependency>
                 <groupId>io.github.xyz.boot</groupId>
-                <artifactId>dubbo-core-dependencies</artifactId>
-                <version>${global.boot.dubbo.version}</version>
-            </dependency>
-
-            <!--web 配置-->
-            <dependency>
-                <groupId>io.github.xyz.boot</groupId>
-                <artifactId>dubbo-core-web-config</artifactId>
-                <version>${global.boot.dubbo.version}</version>
-            </dependency>
-
-            <!--mysql　配置-->
-            <dependency>
-                <groupId>io.github.xyz.boot</groupId>
-                <artifactId>dubbo-core-mysql-config</artifactId>
-                <version>${global.boot.dubbo.version}</version>
-            </dependency>
-
-            <!--dubbo-->
-            <dependency>
-                <groupId>com.alibaba.boot</groupId>
-                <artifactId>dubbo-spring-boot-starter</artifactId>
-                <version>${dubbo.spring.boot.starter.version}</version>
-            </dependency>
-
-            <!-- druid阿里巴巴数据库连接池 -->
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>druid</artifactId>
-                <version>${druid.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>${mysql.connector.java.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.mybatis.spring.boot</groupId>
-                <artifactId>mybatis-spring-boot-starter</artifactId>
-                <version>${mybatis.spring.boot.starter.version}</version>
+                <artifactId>account-service-api</artifactId>
+                <version>${fescar.dubbo.api.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
