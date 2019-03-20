@@ -25,7 +25,7 @@ dubbo:
     name: boot-storage-service
     qos-enable: true
   registry:
-    address: zookeeper://192.168.41.105:2181
+    address: zookeeper://127.0.0.1:2181
   consumer:
     cache: false
     check: false
@@ -35,6 +35,5 @@ dubbo:
   provider:
     timeout: 60000
     retries: 0
-    host: 192.168.41.105
   scan:
     base-packages: io.github.xyz.boot.server.order.service
