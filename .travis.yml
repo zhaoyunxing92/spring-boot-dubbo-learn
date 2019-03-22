@@ -14,4 +14,4 @@ script:
 after_success:
   - echo mvn package success
   - codecov
-  - bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN # 编译通过后启用codecov
+  - bash <(curl -s https://codecov.io/bash) -t "$CODECOV_TOKEN" # 编译通过后启用codecov
