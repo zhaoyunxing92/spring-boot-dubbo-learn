@@ -9,4 +9,4 @@ cache:
 install: true
 
 script:
-  - travis_wait 30 mvn clean package
+  - travis_wait 30 mvn clean package -Dmaven.skip=true
