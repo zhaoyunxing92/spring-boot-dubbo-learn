@@ -56,7 +56,7 @@ public class AppGlobalExceptionHandler {
             HttpRequestMethodNotSupportedException methodNotSupportedException = (HttpRequestMethodNotSupportedException) ex;
             message = methodNotSupportedException.getMessage();
         } else if (ex instanceof AppGlobalException) {
-            // 自定义异常
+            // TODO: 在dubbo里面该异常被包装 自定义异常
             AppGlobalException appGlobalException = (AppGlobalException) ex;
             return appGlobalException.getRes();
         } else {
