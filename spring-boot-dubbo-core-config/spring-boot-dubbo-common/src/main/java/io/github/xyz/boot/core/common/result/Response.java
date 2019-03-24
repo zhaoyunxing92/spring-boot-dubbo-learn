@@ -27,7 +27,30 @@ public class Response<T extends Serializable> implements Serializable {
      */
     private String msg;
     /**
+     * 是否成功
+     */
+    private Boolean succeed;
+    /**
      * 数据
      */
     private T data;
+
+    public Response(Integer code, String msg, T data) {
+        this.code = code;
+        this.msg = msg;
+        this.succeed = false;
+        this.data = data;
+    }
+
+    public Response(Integer code, String msg) {
+        this.code = code;
+        this.msg = msg;
+        this.succeed = false;
+    }
+
+    public Response(Integer code, String msg, Boolean succeed) {
+        this.code = code;
+        this.msg = msg;
+        this.succeed = succeed;
+    }
 }

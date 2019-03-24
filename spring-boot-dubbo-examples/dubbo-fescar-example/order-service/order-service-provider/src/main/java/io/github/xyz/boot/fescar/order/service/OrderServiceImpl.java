@@ -40,17 +40,24 @@ public class OrderServiceImpl implements OrderService {
      * @return Response
      */
     @Override
-    public Response<OrderEntity> creatOrder(String userId, String commodityId, Integer count) {
+    public Response creatOrder(String userId, String commodityId, Integer count) {
         //　总金额
-        Long sumMoney = getSumMoney(commodityId, count);
-        // 检查账户余额
-        checkAccountBalances(userId, sumMoney);
-        // 减库存
-        storageService.deduct(commodityId, count);
-        // 扣账户钱
-        accountService.debit(userId, sumMoney);
+        //Long sumMoney = getSumMoney(commodityId, count);
+        Response<Long> sumMoney = getSumMoney(commodityId, count);
+        if (!sumMoney.getSucceed()) return sumMoney;
 
-        return new Response<>(0, "下单成功", creatOrder(userId, commodityId, count, sumMoney));
+        Long sum = sumMoney.getData();
+        // 检查账户余额
+        Response<String> check = checkAccountBalances(userId, sum);
+        if (!check.getSucceed()) return check;
+        // 减库存
+        Response<String> deduct = storageService.deduct(commodityId, count);
+        if (!deduct.getSucceed()) return deduct;
+        // 扣账户钱
+        Response<String> debit = accountService.debit(userId, sum);
+        if (!debit.getSucceed()) return debit;
+
+        return creatOrder(userId, commodityId, count, sum);
     }
 
     /**
@@ -59,13 +66,15 @@ public class OrderServiceImpl implements OrderService {
      * @param userId   　用户ｉｄ
      * @param sumMoney 　订单总金额
      */
-    private void checkAccountBalances(String userId, Long sumMoney) {
+    private Response<String> checkAccountBalances(String userId, Long sumMoney) {
         Response<AccountEntity> accountres = accountService.getAccountById(userId);
         AccountEntity account = accountres.getData();
 
         if (account.getBalance() < sumMoney) {
-            throw new AppServiceException("用户金额不足");
+            //            throw new AppServiceException("用户金额不足");
+            return new Response<>(500, "账户金额不足");
         }
+        return new Response<>(0, "金额充足", true);
     }
 
     /**
@@ -75,13 +84,14 @@ public class OrderServiceImpl implements OrderService {
      * @param count       个数
      * @return
      */
-    private Long getSumMoney(String commodityId, Integer count) {
+    private Response<Long> getSumMoney(String commodityId, Integer count) {
         Response<StorageEntity> storageres = storageService.getStorageById(commodityId);
         StorageEntity storage = storageres.getData();
         if (count > storage.getResidue()) {
-            throw new AppServiceException("库存不足");
+            //            throw new AppServiceException("库存不足");
+            return new Response<>(500, "库存不足");
         }
-        return (storage.getMoney() * count);
+        return new Response<>(0, "获取总金额成功", true, storage.getMoney() * count);
     }
 
     /**
@@ -93,7 +103,7 @@ public class OrderServiceImpl implements OrderService {
      * @param sumMoney    　总金额
      * @return　OrderEntity
      */
-    private OrderEntity creatOrder(String userId, String commodityId, Integer count, Long sumMoney) {
+    private Response creatOrder(String userId, String commodityId, Integer count, Long sumMoney) {
         OrderEntity order = new OrderEntity();
         order.setCommodityId(commodityId);
         order.setCount(count);
@@ -101,8 +111,9 @@ public class OrderServiceImpl implements OrderService {
         order.setMoney(sumMoney);
 
         if (orderEntityMapper.insertSelective(order) <= 0) {
-            throw new AppServiceException("下单失败");
+            //  throw new AppServiceException("下单失败");
+            return new Response<String>(500, "下单失败");
         }
-        return order;
+        return new Response<>(0, "下单成功", true, order);
     }
 }

@@ -21,5 +21,5 @@ public interface OrderService {
      * @param count       购买数量
      * @return Response
      */
-    Response<OrderEntity> creatOrder(String userId, String commodityId, Integer count);
+    Response creatOrder(String userId, String commodityId, Integer count);
 }

@@ -14,7 +14,7 @@ public class AppGlobalException extends RuntimeException {
     private Response res;
 
     public AppGlobalException(String msg) {
-        res = new Response<>(500, msg, null);
+        res = new Response<>(500, msg);
     }
 
     public AppGlobalException(String msg, Throwable cause) {

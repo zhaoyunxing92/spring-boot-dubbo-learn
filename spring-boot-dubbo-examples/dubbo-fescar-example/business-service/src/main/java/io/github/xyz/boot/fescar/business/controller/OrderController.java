@@ -37,7 +37,7 @@ public class OrderController {
      * @return　OrderEntity
      */
     @PostMapping
-    public Response<OrderEntity> creatOder(@RequestBody @Validated OrderVo order) {
+    public Response creatOder(@RequestBody @Validated OrderVo order) {
         return orderService.creatOrder(order.getUserId(), order.getCommodityId(), order.getCount());
     }
 }

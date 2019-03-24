@@ -32,9 +32,11 @@ public class StorageServiceImpl implements StorageService {
     public Response<String> deduct(String commodityId, Integer count) {
 
         if (storageEntityMapper.deductStorageById(commodityId, count) <= 0) {
-            throw new AppServiceException("库减失败");
+            //            throw new AppServiceException("库减失败");
+            return new Response<>(500, "库减失败");
         }
-        return new Response<>(0, "库减成功", null);
+
+        return new Response<>(0, "库减成功", true);
     }
 
     /**

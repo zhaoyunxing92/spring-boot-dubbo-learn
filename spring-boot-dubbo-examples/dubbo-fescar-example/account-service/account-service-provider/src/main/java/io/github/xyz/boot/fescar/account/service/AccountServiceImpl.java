@@ -49,7 +49,7 @@ public class AccountServiceImpl implements AccountService {
         AccountEntity account = accountEntityMapper.selectByAccountById(userId);
         if (null == account) {
             // throw new AppServiceException("该账户不存在");
-            return new Response<>(500, "该账户不存在", account);
+            return new Response<>(500, "该账户不存在");
         }
         return new Response<>(0, "获取账户成功", account);
     }
