@@ -24,7 +24,7 @@ dubbo:
   application:
     name: fescar-order-service
   registry:
-    address: zookeeper://192.168.9.40:2181
+    address: zookeeper://127.0.0.1:2181
   consumer:
     cache: false
     check: false
@@ -34,6 +34,6 @@ dubbo:
   provider:
     timeout: 60000
     retries: 0
-    host: 192.168.9.40
+    # host: 192.168.9.40
   scan:
     base-packages: io.github.xyz.boot.fescar.order.service
