@@ -32,7 +32,8 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public Response<String> debit(String userId, Long money) {
         if (accountEntityMapper.debitAccountById(userId, money) <= 0) {
-            throw new AppServiceException("扣款失败");
+            //  throw new AppServiceException("扣款失败");
+            return new Response<>(0, "扣款失败", null);
         }
         return new Response<>(0, "扣款成功", null);
     }
@@ -47,7 +48,8 @@ public class AccountServiceImpl implements AccountService {
     public Response<AccountEntity> getAccountById(String userId) {
         AccountEntity account = accountEntityMapper.selectByAccountById(userId);
         if (null == account) {
-            throw new AppServiceException("该账户不存在");
+            // throw new AppServiceException("该账户不存在");
+            return new Response<>(500, "该账户不存在", account);
         }
         return new Response<>(0, "获取账户成功", account);
     }
