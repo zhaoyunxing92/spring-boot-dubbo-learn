@@ -47,7 +47,7 @@ public class OrderServiceImpl implements OrderService {
         if (!sumMoney.getSucceed()) return sumMoney;
 
         Long sum = sumMoney.getData();
-        // 检查账户余额
+        // 检查账户余额,方便出错不检查金额
         // Response<String> check = checkAccountBalances(userId, sum);
         //  if (!check.getSucceed()) return check;
         // 减库存
