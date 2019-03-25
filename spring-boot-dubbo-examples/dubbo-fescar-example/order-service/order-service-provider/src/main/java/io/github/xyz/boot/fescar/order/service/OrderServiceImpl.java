@@ -48,8 +48,8 @@ public class OrderServiceImpl implements OrderService {
 
         Long sum = sumMoney.getData();
         // 检查账户余额
-        Response<String> check = checkAccountBalances(userId, sum);
-        if (!check.getSucceed()) return check;
+        // Response<String> check = checkAccountBalances(userId, sum);
+        //  if (!check.getSucceed()) return check;
         // 减库存
         Response<String> deduct = storageService.deduct(commodityId, count);
         if (!deduct.getSucceed()) return deduct;
