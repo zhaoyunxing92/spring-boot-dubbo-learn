@@ -23,7 +23,15 @@
             <groupId>io.github.xyz.boot</groupId>
             <artifactId>order-service-api</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.alibaba.fescar</groupId>
+            <artifactId>fescar-spring</artifactId>
+        </dependency>
 
+        <dependency>
+            <groupId>com.alibaba.fescar</groupId>
+            <artifactId>fescar-dubbo-alibaba</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

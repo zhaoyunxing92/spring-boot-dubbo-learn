@@ -23,7 +23,7 @@ spring:
 dubbo:
   application:
     name: boot-storage-service
-    qos-enable: true
+    qos-enable: false
   registry:
     address: zookeeper://127.0.0.1:2181
   consumer:

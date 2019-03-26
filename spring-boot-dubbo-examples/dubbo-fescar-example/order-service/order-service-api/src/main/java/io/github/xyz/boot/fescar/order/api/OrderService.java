@@ -3,8 +3,6 @@
  */
 package io.github.xyz.boot.fescar.order.api;
 
-import io.github.xyz.boot.fescar.order.entities.OrderEntity;
-
 import io.github.xyz.boot.core.common.result.Response;
 
 /**

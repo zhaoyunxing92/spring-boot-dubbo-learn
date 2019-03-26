@@ -4,18 +4,14 @@
 package io.github.xyz.boot.fescar.business.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import io.github.xyz.boot.core.common.result.Response;
 import io.github.xyz.boot.fescar.business.controller.vo.OrderVo;
-
-import io.github.xyz.boot.fescar.order.entities.OrderEntity;
+import io.github.xyz.boot.fescar.order.api.OrderService;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import io.github.xyz.boot.fescar.order.api.OrderService;
-
-import io.github.xyz.boot.core.common.result.Response;
 
 
 /**
@@ -37,6 +33,7 @@ public class OrderController {
      * @return　OrderEntity
      */
     @PostMapping
+    // @GlobalTransactional(timeoutMills = 300000, name = "dubbo-gts-fescar-example")
     public Response creatOder(@RequestBody @Validated OrderVo order) {
         return orderService.creatOrder(order.getUserId(), order.getCommodityId(), order.getCount());
     }
