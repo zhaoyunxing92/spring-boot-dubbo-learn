@@ -18,7 +18,6 @@
         <module>spring-boot-dubbo-core-config</module>
         <module>spring-boot-dubbo-examples</module>
         <module>spring-boot-dubbo-dependencies</module>
-        <module>spring-boot-config</module>
     </modules>
 
     <dependencies>
