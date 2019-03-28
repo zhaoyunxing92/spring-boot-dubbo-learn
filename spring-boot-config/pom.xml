@@ -8,13 +8,8 @@
         <artifactId>spring-boot-dubbo-learn</artifactId>
         <groupId>io.github.xyz.boot</groupId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>spring-boot-dubbo-examples</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>spring-boot-config</artifactId>
 
-    <modules>
-        <module>dubbo-fescar-example</module>
-    </modules>
 </project>
