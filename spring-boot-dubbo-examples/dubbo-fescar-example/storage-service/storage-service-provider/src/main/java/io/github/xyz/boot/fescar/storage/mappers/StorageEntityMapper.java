@@ -1,5 +1,4 @@
- package io.github.xyz.boot.fescar.storage.mappers;
-
+package io.github.xyz.boot.fescar.storage.mappers;
 
 
 import io.github.xyz.boot.core.common.mapper.BaseMapper;
