@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: dubbo-provider
+dubbo:
+  application:
+    id: dubbo-provider
+  protocol:
+    name: rest
+    port: 8085
+  scan:
+    base-packages: org.apache.dubbo.service
+  registry:
+    address: zookeeper://127.0.0.1:2182
+    register: false # 只订阅
+  consumer:
+    check: false # 不检查

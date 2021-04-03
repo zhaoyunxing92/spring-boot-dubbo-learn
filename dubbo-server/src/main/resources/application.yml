@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: dubbo-server
+dubbo:
+  application:
+    id: dubbo-server
+  scan:
+    base-packages: org.apache.dubbo
+  registry:
+    address: zookeeper://localhost:2182
+    subscribe: false # 只注册
